@@ -1,0 +1,174 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-heading: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  /* Theme 1: Sage & Ivory (Default Light) */
+  :root,
+  [data-theme="sage"] {
+    --color-primary: #214E3A;
+    --color-primary-hover: #183B2C;
+    --color-primary-light: #EBF3EE;
+    --color-secondary: #8DA98A;
+    --color-bg: #F8F7F1;
+    --color-surface: #FFFFFF;
+    --color-surface-hover: #F2F0E6;
+    --color-accent: #F2C6A8;
+    --color-accent-hover: #E8B492;
+    --color-text-main: #252B28;
+    --color-text-muted: #647268;
+    --color-border: #E5E9E2;
+    --color-card-border: #E2E6DF;
+    --shadow-soft: 0 4px 20px -2px rgba(33, 78, 58, 0.06);
+    --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.04);
+  }
+
+  /* Sage Dark */
+  [data-theme="sage"].dark,
+  .dark [data-theme="sage"],
+  [data-theme="sage"][data-mode="dark"] {
+    --color-primary: #388461;
+    --color-primary-hover: #459E75;
+    --color-primary-light: #183325;
+    --color-secondary: #7FA47D;
+    --color-bg: #0E1511;
+    --color-surface: #16201B;
+    --color-surface-hover: #1E2C25;
+    --color-accent: #E5B290;
+    --color-accent-hover: #D79F7A;
+    --color-text-main: #F3F6F4;
+    --color-text-muted: #95A69B;
+    --color-border: #23342B;
+    --color-card-border: #2B3E34;
+    --shadow-soft: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
+    --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Theme 2: Midnight & Lavender (Light) */
+  [data-theme="midnight"] {
+    --color-primary: #2D3168;
+    --color-primary-hover: #212450;
+    --color-primary-light: #ECEEFA;
+    --color-secondary: #8782D8;
+    --color-bg: #F5F6FC;
+    --color-surface: #FFFFFF;
+    --color-surface-hover: #EDEDFB;
+    --color-accent: #B098E8;
+    --color-accent-hover: #9E82DE;
+    --color-text-main: #181938;
+    --color-text-muted: #5F638A;
+    --color-border: #E2E5F5;
+    --color-card-border: #DCE0F2;
+    --shadow-soft: 0 4px 20px -2px rgba(45, 49, 104, 0.08);
+    --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.04);
+  }
+
+  /* Midnight Dark */
+  [data-theme="midnight"].dark,
+  .dark [data-theme="midnight"],
+  [data-theme="midnight"][data-mode="dark"] {
+    --color-primary: #7C74DB;
+    --color-primary-hover: #9088E6;
+    --color-primary-light: #1D1D3D;
+    --color-secondary: #A39DE8;
+    --color-bg: #0B0C18;
+    --color-surface: #131427;
+    --color-surface-hover: #1C1E38;
+    --color-accent: #C3B1F3;
+    --color-accent-hover: #D4C6F8;
+    --color-text-main: #F2F3FD;
+    --color-text-muted: #9699BD;
+    --color-border: #212442;
+    --color-card-border: #2A2E54;
+    --shadow-soft: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
+    --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Theme 3: Terracotta & Cream (Light) */
+  [data-theme="terracotta"] {
+    --color-primary: #C0562F;
+    --color-primary-hover: #A44622;
+    --color-primary-light: #FBEFE9;
+    --color-secondary: #D98C6C;
+    --color-bg: #FAF6F0;
+    --color-surface: #FFFFFF;
+    --color-surface-hover: #F5EBE1;
+    --color-accent: #F4A261;
+    --color-accent-hover: #E7924F;
+    --color-text-main: #34211A;
+    --color-text-muted: #7A6258;
+    --color-border: #EFE4D8;
+    --color-card-border: #E8D8C8;
+    --shadow-soft: 0 4px 20px -2px rgba(192, 86, 47, 0.08);
+    --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.04);
+  }
+
+  /* Terracotta Dark */
+  [data-theme="terracotta"].dark,
+  .dark [data-theme="terracotta"],
+  [data-theme="terracotta"][data-mode="dark"] {
+    --color-primary: #DD6E45;
+    --color-primary-hover: #E8825C;
+    --color-primary-light: #2C1811;
+    --color-secondary: #E3997A;
+    --color-bg: #140D0A;
+    --color-surface: #1E1511;
+    --color-surface-hover: #2B1E19;
+    --color-accent: #F4A261;
+    --color-accent-hover: #FFAF73;
+    --color-text-main: #FDF6F2;
+    --color-text-muted: #AB978E;
+    --color-border: #32221B;
+    --color-card-border: #422E25;
+    --shadow-soft: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
+    --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.4);
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-text-main);
+    transition: background-color 0.25s ease, color 0.25s ease;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Custom Component Helpers */
+.bg-app { background-color: var(--color-bg); }
+.bg-surface { background-color: var(--color-surface); }
+.bg-surface-hover:hover { background-color: var(--color-surface-hover); }
+.bg-primary-brand { background-color: var(--color-primary); }
+.bg-primary-brand:hover { background-color: var(--color-primary-hover); }
+.bg-primary-light { background-color: var(--color-primary-light); }
+.bg-secondary-brand { background-color: var(--color-secondary); }
+.bg-accent-brand { background-color: var(--color-accent); }
+
+.text-main { color: var(--color-text-main); }
+.text-muted-custom { color: var(--color-text-muted); }
+.text-primary-brand { color: var(--color-primary); }
+
+.border-theme { border-color: var(--color-border); }
+.border-card-theme { border-color: var(--color-card-border); }
+
+.shadow-custom { box-shadow: var(--shadow-card); }
+.shadow-soft-custom { box-shadow: var(--shadow-soft); }
+
+/* Smooth animations */
+.fade-in {
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}

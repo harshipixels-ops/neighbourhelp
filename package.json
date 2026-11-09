@@ -1,0 +1,33 @@
+{
+  "name": "neighbour-help",
+  "version": "1.0.0",
+  "description": "NeighbourHelp - Connecting Neighbours. Helping Communities.",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "server": "node server/index.js",
+    "client": "npm --prefix client run dev",
+    "build": "npm --prefix client run build",
+    "dev": "concurrently --kill-others-on-fail \"node server/index.js\" \"npm --prefix client run dev\""
+  },
+  "keywords": [
+    "neighbourhood",
+    "volunteering",
+    "community",
+    "assistance",
+    "react",
+    "express",
+    "mongodb"
+  ],
+  "author": "NeighbourHelp Team",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "concurrently": "^9.2.1",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.3.2"
+  }
+}
